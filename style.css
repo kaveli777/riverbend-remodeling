@@ -1,0 +1,550 @@
+
+/* =========================
+   1. Global styles
+   ========================= */
+
+:root {
+    --navy: #172b2a;
+    --green: #486b57;
+    --cream: #f7f5ef;
+    --white: #ffffff;
+    --text: #343a36;
+    --muted: #707872;
+    --border: #e4e7e1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+/* =========================
+   2. Demo notice
+   ========================= */
+
+.demo-notice {
+    padding: 7px 15px;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   3. Header and navigation
+   ========================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 22px 7%;
+    background: var(--white);
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--navy);
+    white-space: nowrap;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+nav .nav-cta {
+    padding: 10px 17px;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 4px;
+}
+
+/* =========================
+   4. Hero section
+   ========================= */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 80px 9%;
+    color: var(--white);
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 32, 29, 0.93),
+            rgba(15, 32, 29, 0.56)
+        ),
+        url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.hero .eyebrow {
+    color: #d5b98b;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h1 {
+    margin-bottom: 22px;
+    font-size: clamp(42px, 6vw, 68px);
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 540px;
+    color: #f0f1ed;
+    font-size: 18px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary {
+    background: var(--green);
+    color: var(--white);
+}
+
+.button-primary:hover {
+    background: var(--navy);
+}
+
+.button-outline {
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.button-outline:hover {
+    background: var(--white);
+    color: var(--navy);
+}
+
+.hero-note {
+    margin-top: 25px;
+    color: #e1e5df;
+    font-size: 13px;
+}
+
+/* =========================
+   5. General sections
+   ========================= */
+
+.section {
+    padding: 90px 7%;
+}
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-heading h2,
+.about-content h2 {
+    margin-bottom: 18px;
+    color: var(--navy);
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: -1px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+}
+
+/* =========================
+   6. Service cards
+   ========================= */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.service-card {
+    padding: 30px 24px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--white);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.service-number {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.service-card h3 {
+    margin: 20px 0 12px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   7. Project gallery
+   ========================= */
+
+.projects-section {
+    background: var(--cream);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.project-card {
+    overflow: hidden;
+    border-radius: 6px;
+    background: var(--white);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.project-card img {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.04);
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    color: var(--navy);
+    font-size: 19px;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.image-disclaimer {
+    max-width: 1250px;
+    margin: 25px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+}
+
+/* =========================
+   8. About section
+   ========================= */
+
+.about-section {
+    padding: 95px 9%;
+    background: #edf0e9;
+}
+
+.about-content {
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content > p:not(.eyebrow) {
+    margin-bottom: 28px;
+    color: var(--muted);
+}
+
+/* =========================
+   9. Contact section
+   ========================= */
+
+.contact-panel {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 38px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-panel > p:first-child {
+    margin-bottom: 22px;
+}
+
+.contact-note {
+    margin-top: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   10. Footer
+   ========================= */
+
+.site-footer {
+    padding: 45px 7%;
+    background: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-logo {
+    color: var(--white);
+}
+
+.site-footer > p {
+    margin-top: 12px;
+    color: #d8ded9;
+    font-size: 13px;
+}
+
+.site-footer .copyright {
+    margin-top: 24px;
+    color: #aebbb1;
+    font-size: 12px;
+}
+
+/* =========================
+   11. Tablet layouts
+   ========================= */
+
+@media (max-width: 950px) {
+    .site-header {
+        padding: 20px 5%;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================
+   12. Mobile layouts
+   ========================= */
+
+@media (max-width: 650px) {
+    .site-header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    nav .nav-cta {
+        padding: 7px 11px;
+    }
+
+    .hero {
+        min-height: 530px;
+        padding: 65px 7%;
+    }
+
+    h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .service-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card img {
+        height: 240px;
+    }
+
+    .about-section {
+        padding: 70px 7%;
+    }
+
+    .contact-panel {
+        padding: 25px 18px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* Project estimator */
+
+.estimator-section {
+    background: #f7f5ef;
+}
+
+.estimator-panel {
+    display: grid;
+    gap: 14px;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid #e4e7e1;
+    border-radius: 8px;
+}
+
+.estimator-panel label {
+    font-weight: 700;
+    color: #172b2a;
+}
+
+.estimator-panel input,
+.estimator-panel select {
+    width: 100%;
+    padding: 12px;
+    font: inherit;
+    border: 1px solid #cbd2cb;
+    border-radius: 4px;
+    background: white;
+}
+
+.estimator-panel button {
+    cursor: pointer;
+}
+
+#estimateResult {
+    font-weight: 700;
+    color: #172b2a;
+}
